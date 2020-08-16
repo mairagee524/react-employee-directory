@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Logo from '../logo';
 import Links from '../links';
 
-const Container = styled.div.attrs({
+const Container = styled.div.attr({
     className: 'container',
 });
 
