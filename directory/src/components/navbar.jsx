@@ -1,12 +1,14 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, { Component } from 'react'
+import styled from 'styled-components'
 
-import Logo from './logo';
-import Links from './links';
+import Logo from './Logo'
+import Links from './Links'
 
 const Container = styled.div.attrs({
     className: 'container',
-})``
+})`
+    height: 150px;
+`
 
 const Nav = styled.nav.attrs({
     className: 'navbar navbar-expand-lg navbar-dark bg-dark',
@@ -25,6 +27,6 @@ class NavBar extends Component {
             </Container>
         )
     }
-};
+}
 
 export default NavBar;
