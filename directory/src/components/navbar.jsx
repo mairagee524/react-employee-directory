@@ -6,7 +6,7 @@ import Links from './links';
 
 const Container = styled.div.attrs({
     className: 'container',
-});
+})``
 
 const Nav = styled.nav.attrs({
     className: 'navbar navbar-expand-lg navbar-dark bg-dark',
