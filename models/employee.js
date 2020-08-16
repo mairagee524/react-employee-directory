@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const EmployeeShema = new Schema({
+const EmployeeSchema = new Schema({
     name: { 
         type: String, 
         required: true 
@@ -12,7 +12,8 @@ const EmployeeShema = new Schema({
     },
     email: { 
         type: String, 
-        required: true 
+        required: true,
+        match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
     dob: { 
         type: Date, 
@@ -20,9 +21,9 @@ const EmployeeShema = new Schema({
     }
 });
 
-module.exports = mongoose.model('employess', EmployeeShema);
+module.exports = mongoose.model('employees', EmployeeSchema);
 
 //equal to...
-// const EmployDirect = mongoose.model("employees", EmployeeShema);
+// const EmployDirect = mongoose.model("employees", EmployeeSchema);
 
 // module.exports = EmployDirect;
