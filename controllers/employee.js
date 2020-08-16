@@ -1,40 +1,40 @@
 
-const Movie = require('../models/movie-model')
+const Employee = require('../models/employee')
 
-createMovie = (req, res) => {
+createEmployee = (req, res) => {
     const body = req.body
 
     if (!body) {
         return res.status(400).json({
             success: false,
-            error: 'You must provide a movie',
+            error: 'You must provide an employee'
         })
     }
 
-    const movie = new Movie(body)
+    const employee = new Employee(body)
 
-    if (!movie) {
+    if (!employee) {
         return res.status(400).json({ success: false, error: err })
     }
 
-    movie
+    employee
         .save()
         .then(() => {
             return res.status(201).json({
                 success: true,
-                id: movie._id,
-                message: 'Movie created!',
+                id: employee._id,
+                message: 'Employee created!',
             })
         })
         .catch(error => {
             return res.status(400).json({
                 error,
-                message: 'Movie not created!',
+                message: 'Employee not created!',
             })
         })
 }
 
-updateMovie = async (req, res) => {
+updateEmployee = async (req, res) => {
     const body = req.body
 
     if (!body) {
@@ -44,83 +44,83 @@ updateMovie = async (req, res) => {
         })
     }
 
-    Movie.findOne({ _id: req.params.id }, (err, movie) => {
+    Employee.findOne({ _id: req.params.id }, (err, employee) => {
         if (err) {
             return res.status(404).json({
                 err,
-                message: 'Movie not found!',
+                message: 'Employee not found!',
             })
         }
-        movie.name = body.name
-        movie.time = body.time
-        movie.rating = body.rating
-        movie
+        employee.name = body.name
+        employee.time = body.time
+        employee.rating = body.rating
+        employee
             .save()
             .then(() => {
                 return res.status(200).json({
                     success: true,
-                    id: movie._id,
-                    message: 'Movie updated!',
+                    id: employee._id,
+                    message: 'Employee updated!',
                 })
             })
             .catch(error => {
                 return res.status(404).json({
                     error,
-                    message: 'Movie not updated!',
+                    message: 'Employee not updated!',
                 })
             })
     })
 }
 
-deleteMovie = async (req, res) => {
-    await Movie.findOneAndDelete({ _id: req.params.id }, (err, movie) => {
+deleteEmployee = async (req, res) => {
+    await Employee.findOneAndDelete({ _id: req.params.id }, (err, employee) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }
 
-        if (!movie) {
+        if (!employee) {
             return res
                 .status(404)
-                .json({ success: false, error: `Movie not found` })
+                .json({ success: false, error: `Employee not found` })
         }
 
-        return res.status(200).json({ success: true, data: movie })
+        return res.status(200).json({ success: true, data: employee })
     }).catch(err => console.log(err))
 }
 
-getMovieById = async (req, res) => {
-    await Movie.findOne({ _id: req.params.id }, (err, movie) => {
+getEmployeeById = async (req, res) => {
+    await Employee.findOne({ _id: req.params.id }, (err, employee) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }
 
-        if (!movie) {
+        if (!employee) {
             return res
                 .status(404)
-                .json({ success: false, error: `Movie not found` })
+                .json({ success: false, error: `Employee not found` })
         }
-        return res.status(200).json({ success: true, data: movie })
+        return res.status(200).json({ success: true, data: employee })
     }).catch(err => console.log(err))
 }
 
-getMovies = async (req, res) => {
-    await Movie.find({}, (err, movies) => {
+getEmployees = async (req, res) => {
+    await Employee.find({}, (err, employees) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }
-        if (!movies.length) {
+        if (!employees.length) {
             return res
                 .status(404)
-                .json({ success: false, error: `Movie not found` })
+                .json({ success: false, error: `Employee not found` })
         }
-        return res.status(200).json({ success: true, data: movies })
+        return res.status(200).json({ success: true, data: employees })
     }).catch(err => console.log(err))
 }
 
 module.exports = {
-    createMovie,
-    updateMovie,
-    deleteMovie,
-    getMovies,
-    getMovieById,
+    createEmployee,
+    updateEmployee,
+    deleteEmployee,
+    getEmployees,
+    getEmployeeById,
 }

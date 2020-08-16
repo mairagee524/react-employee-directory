@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const Employee = new Schema({
+const EmployeeShema = new Schema({
     name: { 
         type: String, 
         required: true 
@@ -20,9 +20,9 @@ const Employee = new Schema({
     }
 });
 
-module.exports = mongoose.model('employess', Employee);
+module.exports = mongoose.model('employess', EmployeeShema);
 
 //equal to...
-// const EmployDirect = mongoose.model("employees", Employee);
+// const EmployDirect = mongoose.model("employees", EmployeeShema);
 
 // module.exports = EmployDirect;
