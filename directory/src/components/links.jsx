@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const Collapse = styled.div.attr({
-    className: 'collapse navbar-collapse',
+const Collapse = styled.div.attrs({
+    className: 'collpase navbar-collapse',
 });
 
-const List = styled.div.attr({
+const List = styled.div.attrs({
     className: 'navbar-nav mr-auto',
 });
 
-const Item = styled.div.attr({
-    className: 'collapse navbar-collapse',
+const Item = styled.div.attrs({
+    className: 'collpase navbar-collapse',
 });
 
 class Links extends Component {

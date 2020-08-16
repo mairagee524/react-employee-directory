@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import Logo from '../logo';
-import Links from '../links';
+import Logo from './logo';
+import Links from './links';
 
-const Container = styled.div.attr({
+const Container = styled.div.attrs({
     className: 'container',
 });
 
