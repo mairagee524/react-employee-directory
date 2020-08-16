@@ -54,6 +54,7 @@ class DeleteEmployee extends Component {
 class EmployeesList extends Component {
     constructor(props) {
         super(props)
+        console.log(props);
         this.state = {
             employees: [],
             columns: [],
