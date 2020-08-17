@@ -71,7 +71,7 @@ class EmployeesUpdate extends Component {
         this.setState({ dob })
     }
     handleUpdateEmployee = async () => {
-        const { name, phone, email, dob } = this.state
+        const { id, name, phone, email, dob } = this.state
         const payload = { name, phone, email, dob }
 
         await api.updateEmployeeById(id, payload).then(res => {
