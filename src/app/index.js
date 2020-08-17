@@ -18,6 +18,10 @@ function App() {
                     exact
                     component={EmployeesUpdate}
                 />
+                <Route
+                    path="/"
+                    component={() => (<h1>Hello</h1>)}
+                />
             </Switch>
         </Router>
     )
