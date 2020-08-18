@@ -75,10 +75,11 @@ class EmployeesList extends Component {
                                 <EmployeePicture src={employee.picture.large} />
                                 {/* Name.title, name.first, name.last */}
                                 <EmployeeName>{`${employee.name.first} ${employee.name.last}`}</EmployeeName>
-                                {/* Phone number and email*/}
+                                {/* Phone number and email and DOB*/}
                                 <EmployeeDetails>
                                     <EmployeePhoneNumber>{employee.email}</EmployeePhoneNumber>
                                     <EmployeeEmail>{employee.phone}</EmployeeEmail>
+                                    <EmployeeDateBirth>{employee.dob}</EmployeeDateBirth>
                                 </EmployeeDetails>
                             </Card>
                         )
@@ -90,7 +91,9 @@ class EmployeesList extends Component {
     }
 }
 
-const EmployeeEmail = styled.p``
+
+
+const EmployeeDateBirth = styled.p``
 
 const EmployeePhoneNumber = styled.p``
 
