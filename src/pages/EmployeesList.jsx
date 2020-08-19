@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import Header from '../components/Header'
 
 import api from '../api'
 
@@ -10,7 +11,8 @@ class EmployeesList extends Component {
             employees: [],
             isLoading: false,
             searchName: '',
-            orderName: 'asc' // 'desc'
+            orderName: 'asc', // 'desc'
+            orderAge: 'asc' // 'desc'
         }
     }
 
@@ -49,6 +51,7 @@ class EmployeesList extends Component {
         return (
             <Wrapper>
                 {/* Search bar */}
+                <Header></Header>
                 <SearchBar>
                     <Label>Search Name:</Label>
 
@@ -60,6 +63,7 @@ class EmployeesList extends Component {
                 {/* filters */}
                 <FilterBar>
                     <FilterButton onClick={() => this.setState({ orderName: 'asc/desc' })}>Order by name</FilterButton>
+                    <FilterButton onClick={() => this.setState({ orderAge: 'asc/desc' })}>Order by age</FilterButton>
                 </FilterBar>
                 {showTable && (
                     employees
@@ -101,7 +105,6 @@ class EmployeesList extends Component {
                         )
                     )
                 )}
-
             </Wrapper>
         )
     }
