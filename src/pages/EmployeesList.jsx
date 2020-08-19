@@ -95,6 +95,8 @@ class EmployeesList extends Component {
 
 const EmployeeDateBirth = styled.p``
 
+const EmployeeEmail = styled.p``
+
 const EmployeePhoneNumber = styled.p``
 
 const EmployeeDetails = styled.div`
