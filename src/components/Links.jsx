@@ -28,11 +28,6 @@ class Links extends Component {
                                 List Employees
                             </Link>
                         </Item>
-                        <Item>
-                            <Link to="/employees/create" className="nav-link">
-                                Create Employee
-                            </Link>
-                        </Item>
                     </List>
                 </Collapse>
             </React.Fragment>

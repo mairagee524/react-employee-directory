@@ -30,10 +30,6 @@ class EmployeesList extends Component {
         const { employees } = this.state
         console.log('TCL: EmployeesList -> render -> employees', employees)
 
-        // let employeeList = employees.filter(({ location }) => location.country.val === "United States")
-
-        // console.log(employeeList);
-
         function formatDate(date) {
             const dateArray = date.split("-");
             const year = dateArray[0];
@@ -55,6 +51,7 @@ class EmployeesList extends Component {
                 {/* Search bar */}
                 <SearchBar>
                     <Label>Search Name:</Label>
+
                     <SearchInput placeholder="Type something... 🦜" onChange={event => {
                         const searchName = event.target.value
                         this.setState({ searchName })
@@ -105,8 +102,6 @@ class EmployeesList extends Component {
     }
 }
 
-
-
 const EmployeeDateBirth = styled.p``
 
 const EmployeeEmail = styled.p``
@@ -149,3 +144,6 @@ const Wrapper = styled.div`
 `
 
 export default EmployeesList
+
+
+// find a way to do a search where the names are all lowercase so that all names can be shown correctly
