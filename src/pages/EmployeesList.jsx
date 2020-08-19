@@ -6,7 +6,6 @@ import api from '../api'
 class EmployeesList extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             employees: [],
             isLoading: false,
@@ -30,6 +29,20 @@ class EmployeesList extends Component {
     render() {
         const { employees } = this.state
         console.log('TCL: EmployeesList -> render -> employees', employees)
+
+        // let employeeList = employees.filter(({ location }) => location.country.val === "United States")
+
+        // console.log(employeeList);
+
+        function formatDate(date) {
+            const dateArray = date.split("-");
+            const year = dateArray[0];
+            const month = dateArray[1];
+            const dayArray = dateArray[2].split("T");
+            const day = dayArray[0];
+            const formattedDate = [month, day, year].join("-");
+            return formattedDate;
+        }
 
         let showTable = true
 
@@ -79,7 +92,8 @@ class EmployeesList extends Component {
                                 <EmployeeDetails>
                                     <EmployeePhoneNumber>{employee.email}</EmployeePhoneNumber>
                                     <EmployeeEmail>{employee.phone}</EmployeeEmail>
-                                    <EmployeeDateBirth>{employee.dob}</EmployeeDateBirth>
+                                    <EmployeeDateBirth>
+                                        {formatDate(employee.dob.date)}</EmployeeDateBirth>
                                 </EmployeeDetails>
                             </Card>
                         )
