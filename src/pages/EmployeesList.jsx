@@ -63,6 +63,11 @@ class EmployeesList extends Component {
                 </FilterBar>
                 {showTable && (
                     employees
+
+                    // .sort(employee => {
+
+                    //     console.log(employee.name.first)
+                    // })
                     // .sort((rightEmployee, leftEmployee) => {
                     //   is rightEmployee before left? asc
                     //   is left before right? desc
