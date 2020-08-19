@@ -40,17 +40,6 @@ class EmployeesList extends Component {
             return formattedDate;
         }
 
-
-        // function compareValues(key, order = "asc") {
-        //     return function innerSort(a, b) {
-        //         if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
-        //             return 0;
-        //         }
-
-                
-        //     }
-        // }
-
         let showTable = true
 
         if (!employees.length) {
