@@ -6,7 +6,6 @@ import api from '../api'
 class EmployeesList extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
             employees: [],
             isLoading: false,
@@ -31,6 +30,16 @@ class EmployeesList extends Component {
         const { employees } = this.state
         console.log('TCL: EmployeesList -> render -> employees', employees)
 
+        function formatDate(date) {
+            const dateArray = date.split("-");
+            const year = dateArray[0];
+            const month = dateArray[1];
+            const dayArray = dateArray[2].split("T");
+            const day = dayArray[0];
+            const formattedDate = [month, day, year].join("-");
+            return formattedDate;
+        }
+
         let showTable = true
 
         if (!employees.length) {
@@ -42,6 +51,7 @@ class EmployeesList extends Component {
                 {/* Search bar */}
                 <SearchBar>
                     <Label>Search Name:</Label>
+
                     <SearchInput placeholder="Type something... 🦜" onChange={event => {
                         const searchName = event.target.value
                         this.setState({ searchName })
@@ -79,7 +89,8 @@ class EmployeesList extends Component {
                                 <EmployeeDetails>
                                     <EmployeePhoneNumber>{employee.email}</EmployeePhoneNumber>
                                     <EmployeeEmail>{employee.phone}</EmployeeEmail>
-                                    <EmployeeDateBirth>{employee.dob}</EmployeeDateBirth>
+                                    <EmployeeDateBirth>
+                                        {formatDate(employee.dob.date)}</EmployeeDateBirth>
                                 </EmployeeDetails>
                             </Card>
                         )
@@ -90,8 +101,6 @@ class EmployeesList extends Component {
         )
     }
 }
-
-
 
 const EmployeeDateBirth = styled.p``
 
@@ -135,3 +144,6 @@ const Wrapper = styled.div`
 `
 
 export default EmployeesList
+
+
+// find a way to do a search where the names are all lowercase so that all names can be shown correctly
