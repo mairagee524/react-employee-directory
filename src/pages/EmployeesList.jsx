@@ -40,6 +40,17 @@ class EmployeesList extends Component {
             return formattedDate;
         }
 
+
+        // function compareValues(key, order = "asc") {
+        //     return function innerSort(a, b) {
+        //         if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) {
+        //             return 0;
+        //         }
+
+                
+        //     }
+        // }
+
         let showTable = true
 
         if (!employees.length) {
@@ -63,6 +74,11 @@ class EmployeesList extends Component {
                 </FilterBar>
                 {showTable && (
                     employees
+
+                    // .sort(employee => {
+
+                    //     console.log(employee.name.first)
+                    // })
                     // .sort((rightEmployee, leftEmployee) => {
                     //   is rightEmployee before left? asc
                     //   is left before right? desc

@@ -11,11 +11,11 @@ function App() {
         <Router>
             <NavBar />
             <Switch>
-                <Route path="/employees/list" exact component={EmployeesList} />
-                <Route
+                <Route path="/" exact component={EmployeesList} />
+                {/* <Route
                     path="/"
                     component={() => (<h1>Hello</h1>)}
-                />
+                /> */}
             </Switch>
         </Router>
     )
