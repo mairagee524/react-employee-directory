@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
-import styled from 'styled-components'
-import Header from '../components/Header'
+import Header from '../components/Header/Header'
 import FilterButton from '../components/OrderButtons'
 import Card from '../components/Card'
 import Wrapper from '../components/Wrapper'
 import EmployeeDetails from '../components/EmployeeDetails'
 import FilterBar from '../components/FilterBar'
 import SearchBar from '../components/SearchBar'
-
+import EmployeeCity from '../components/EmployeeCity'
+import SearchInput from '../components/SearchInput'
+import Label from '../components/Label'
+import EmployeePicture from '../components/EmployeePicture'
+import EmployeeName from '../components/EmployeeName'
+import EmployeeDateBirth from '../components/EmployeeDateBirth'
+import EmployeeEmail from '../components/EmployeeEmail'
+import EmployeePhoneNumber from '../components/EmployeePhoneNumber'
 
 import api from '../api'
 
@@ -175,7 +181,8 @@ class EmployeesList extends Component {
                 <SearchBar>
                     <Label>Search Name:</Label>
 
-                    <SearchInput placeholder="Type something... 🦜" onChange={event => {
+                    <SearchInput placeholder="Type something... 🦜" 
+                        onChange={event => {
                         const searchName = event.target.value
                         this.setState({ searchName })
                     }}/>
@@ -218,18 +225,5 @@ class EmployeesList extends Component {
         )
     }
 }
-
-const EmployeeCity = styled.p``
-const EmployeePhoneNumber = styled.p``
-const EmployeeEmail = styled.p``
-const EmployeeDateBirth = styled.p``
-
-const EmployeeName = styled.h3``
-
-const EmployeePicture = styled.img``
-
-const Label = styled.label``
-
-const SearchInput = styled.input``
 
 export default EmployeesList
