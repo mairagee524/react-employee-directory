@@ -14,6 +14,7 @@ import EmployeeName from '../components/EmployeeName'
 import EmployeeDateBirth from '../components/EmployeeDateBirth'
 import EmployeeEmail from '../components/EmployeeEmail'
 import EmployeePhoneNumber from '../components/EmployeePhoneNumber'
+import CardContainer from '../components/CardContainer'
 
 import api from '../api'
 
@@ -179,7 +180,7 @@ class EmployeesList extends Component {
                 {/* Search bar */}
                 
                 <SearchBar>
-                    <Label>Search Name:</Label>
+                    <Label>Search Name: </Label>
 
                     <SearchInput placeholder="Type something... 🦜" 
                         onChange={event => {
@@ -193,6 +194,7 @@ class EmployeesList extends Component {
                     <FilterButton onClick={this.handleLastNameSort}>Order by Last Name</FilterButton>
                     <FilterButton onClick={this.handleAgeSort}>Order by Age</FilterButton>
                 </FilterBar>
+                <CardContainer>
                 {showTable && (
                     employees
                     .filter(employee => {
@@ -221,6 +223,7 @@ class EmployeesList extends Component {
                         </Card>
                     ))
                 )}
+                </CardContainer>
             </Wrapper>
         )
     }

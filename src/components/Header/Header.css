@@ -1,0 +1,18 @@
+.header {
+    background-color: #B3CBB9;
+}
+
+h1, .header-info {
+    text-align: center;
+}
+
+h1 {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.header-info {
+    padding: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
