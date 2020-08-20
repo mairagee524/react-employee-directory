@@ -8,7 +8,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 function App() {
     return (
         <Router>
-        
             <Route 
             path="/" 
             exact component={EmployeesList} />
