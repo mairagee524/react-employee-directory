@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Header from '../components/Header'
+import FilterButton from '../components/OrderButtons'
+import Card from '../components/Card'
+import Wrapper from '../components/Wrapper'
+import EmployeeDetails from '../components/EmployeeDetails'
+import FilterBar from '../components/FilterBar'
+import SearchBar from '../components/SearchBar'
+
 
 import api from '../api'
 
@@ -66,8 +73,6 @@ class EmployeesList extends Component {
         });
     };
 
-
-
     // sort in ascending or descending order of last name
     handleLastNameSort = (event) => {
         event.preventDefault();
@@ -105,7 +110,6 @@ class EmployeesList extends Component {
         });
     };
 
-
     // sort in ascending or descending order of age
     handleAgeSort = (event) => {
         event.preventDefault();
@@ -142,9 +146,6 @@ class EmployeesList extends Component {
         ascendingAge: false,
         });
     };
-
-
-
 
     render() {
         const { employees } = this.state
@@ -206,8 +207,8 @@ class EmployeesList extends Component {
                             {/* Phone number and email and DOB*/}
                             <EmployeeDetails>
                                 <EmployeeCity>Location: {`${employee.location.city}, ${employee.location.state}`}</EmployeeCity>
-                                <EmployeePhoneNumber>Phone: {employee.email}</EmployeePhoneNumber>
-                                <EmployeeEmail>Email: {employee.phone}</EmployeeEmail>
+                                <EmployeePhoneNumber>Phone: {employee.phone}</EmployeePhoneNumber>
+                                <EmployeeEmail>Email: {employee.email}</EmployeeEmail>
                                 <EmployeeDateBirth>Date of Birth: {formatDate(employee.dob.date)}</EmployeeDateBirth>
                             </EmployeeDetails>
                         </Card>
@@ -219,46 +220,16 @@ class EmployeesList extends Component {
 }
 
 const EmployeeCity = styled.p``
-
-const EmployeeDateBirth = styled.p``
-
-const EmployeeEmail = styled.p``
-
 const EmployeePhoneNumber = styled.p``
-
-const EmployeeDetails = styled.div`
-    display: row;
-    align-items: center;
-    justify-content: center;
-`
+const EmployeeEmail = styled.p``
+const EmployeeDateBirth = styled.p``
 
 const EmployeeName = styled.h3``
 
 const EmployeePicture = styled.img``
 
-const Card = styled.div`
-    padding: 1rem;
-    border-radius: 8px;
-    /* brumm.af */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`
-
-const FilterBar = styled.div``
-
-const FilterButton = styled.button``
-
-const SearchBar = styled.div``
-
 const Label = styled.label``
 
 const SearchInput = styled.input``
-
-const Wrapper = styled.div`
-    padding: 0 40px 40px 40px;
-`
 
 export default EmployeesList
